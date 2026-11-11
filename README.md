@@ -14,6 +14,12 @@ A responsive Gemini-powered AI assistant starter built with Next.js. Includes ch
 3. Add the environment variable `GEMINI_API_KEY` in Netlify: Site configuration → Environment variables.
 4. Deploy. Never put a real API key in GitHub or public code.
 
+## Project layout
+Next.js uses the App Router in `app/`: `page.tsx` provides the home page,
+`layout.tsx` loads `globals.css`, and `api/chat/route.ts` handles `/api/chat`.
+Keep these files in their App Router directories. Netlify builds from the
+repository root with `npm run build` and publishes `.next`.
+
 ## Security note
 The key entered in the UI is sent over HTTPS to this app's server endpoint for the request and is not saved by this starter. For a public app, prefer setting `GEMINI_API_KEY` in Netlify environment variables and remove the key input so visitors cannot use your private quota. Add authentication, rate limits, and usage controls before public launch.
 
