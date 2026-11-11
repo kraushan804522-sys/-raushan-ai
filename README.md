@@ -1,26 +1,21 @@
-# AI Studio — Black & Gold
+# Nova AI Assistant — Black & Gold
 
-A responsive Next.js starter for an all-in-one AI Studio. It works as a mobile-friendly website and can be deployed as a PWA-style web experience; it is not yet a signed native Android APK.
-
-## Included
-- Black & gold responsive dashboard
-- Gemini-powered AI chat
-- Study assistant prompt mode
-- Browser voice input (Chrome support varies) and read-aloud
-- Clearly marked setup placeholders for image, video, and WhatsApp integrations
+A responsive Gemini-powered AI assistant starter built with Next.js. Includes chat, conversation context, prompt suggestions, and an optional API-key field.
 
 ## Run locally
 1. Install Node.js 20 or later.
-2. In this folder run `npm install`.
-3. Copy `.env.example` to `.env.local`.
-4. Put your key in `.env.local` as `GEMINI_API_KEY=your_key` (never commit or share this file).
-5. Run `npm run dev` and open `http://localhost:3000`.
+2. Run `npm install`.
+3. Run `npm run dev`, then open http://localhost:3000.
+4. Paste your Gemini API key into the key field at the top-right, or copy `.env.example` to `.env.local` and set `GEMINI_API_KEY=your_key`.
 
-## Security
-The Gemini key is read only by the server route `app/api/chat/route.ts`. Do not put it in browser code, a public GitHub repository, or screenshots. Add usage limits and authentication before public launch.
+## Deploy to Netlify
+1. Push this folder to a GitHub repository.
+2. Import the repository in Netlify. Build command: `npm run build`.
+3. Add the environment variable `GEMINI_API_KEY` in Netlify: Site configuration → Environment variables.
+4. Deploy. Never put a real API key in GitHub or public code.
 
-## Feature notes
-- Image generation needs an image-capable model available to your API project and a dedicated server endpoint.
-- Video generation depends on eligible model access and may require billing or separate entitlement.
-- A real WhatsApp bot requires Meta WhatsApp Business Cloud API credentials and a webhook; Gemini API alone is not enough.
-- To install on Android, deploy the site over HTTPS and use Chrome's menu > Add to Home screen. A native APK requires a separate Android wrapper/build and signing step.
+## Security note
+The key entered in the UI is sent over HTTPS to this app's server endpoint for the request and is not saved by this starter. For a public app, prefer setting `GEMINI_API_KEY` in Netlify environment variables and remove the key input so visitors cannot use your private quota. Add authentication, rate limits, and usage controls before public launch.
+
+## Current scope
+This is a working text-chat starter. Image generation, video generation, voice conversation, WhatsApp integration, user accounts, and native Android APK packaging are not included yet.
