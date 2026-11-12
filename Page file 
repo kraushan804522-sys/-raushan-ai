@@ -1,9 +1,0 @@
-export default function Home() {
-  return (
-    <main style={{ padding: '20px', textAlign: 'center', fontFamily: 'Arial' }}>
-      <h1>Raushan Mobile Repairing Shop</h1>
-      <p>मिर्ज़ापुर हाट, अररिया (बिहार)</p>
-      <p>स्मार्टफ़ोन हार्डवेयर रिपेयरिंग और डिस्प्ले फोल्डर बदलाव की दुकान</p>
-    </main>
-  );
-}
